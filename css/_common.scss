@@ -1,0 +1,101 @@
+body {
+  background-color: #f5f2eb;
+  font-family: "Playfair Display", "Noto Sans JP";
+}
+
+a,
+h2,
+h3 {
+  font-family: "playfair Display";
+}
+
+p {
+  font-family: "Noto Sans JP";
+}
+
+.section-title {
+  margin: 0 0 80px;
+  padding: 120px 0 0;
+  color: #7e9c74;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.text-title {
+  margin-bottom: 24px;
+  color: #7e9c74;
+  font-size: 20px;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto 80px;
+}
+
+.left-item {
+  opacity: 0;
+  transform: translateX(-50%);
+}
+
+.right-item {
+  opacity: 0;
+  transform: translateX(50%);
+}
+
+.slide-left {
+  animation: slide-left 1.5s ease-out 0s 1 forwards;
+}
+
+.slide-right {
+  margin-left: auto;
+  animation: slide-right 1.5s ease-out 0s 1 forwards;
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(50%);
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.button {
+  max-width: 200px;
+  margin: 64px auto 24px;
+
+  input {
+    width: 200px;
+    height: 64px;
+    background-color: #7e9c74;
+    color: #fff;
+    border: 1px soid #dad6dc;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #fff;
+      color: #7e9c74;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .text-title {
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,44 @@
+.coffee {
+  .wrapper {
+    background-color: #fff;
+
+    .coffee-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 20px;
+      padding: 32px;
+
+      .coffee-grid-item {
+        text-align: center;
+
+        .fadein {
+          opacity: 0;
+          transform: translateY(10px);
+          transition: all 1s;
+        }
+
+        img {
+          width: 300px;
+          height: 300px;
+          object-fit: cover;
+        }
+
+        p {
+          margin: 8px 0 8px;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 600px) {
+  .coffee {
+    .wrapper {
+      .coffee-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+  }
+}

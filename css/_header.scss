@@ -1,0 +1,160 @@
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+  vertical-align: middle;
+  background-color: #fff;
+  line-height: 2;
+  z-index: 10;
+
+  .site-logo {
+    width: 140px;
+    height: 80px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .hamburger {
+    display: none;
+  }
+  nav {
+    .nav-list {
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+
+      li {
+        padding: 20px 0;
+        margin-right: 20px;
+
+        a {
+          display: block;
+          color: #000;
+          text-decoration: none;
+
+          img {
+            width: 29px;
+            height: 29px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    .hamburger {
+      display: block;
+      position: relative;
+      top: 20px;
+      right: 15px;
+      width: 30px;
+      height: 30px;
+      transition: all 0.5s;
+      cursor: pointer;
+
+      span {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: #333;
+        transition: all 0.5s;
+
+        &:nth-child(1) {
+          top: 10%;
+        }
+
+        &:nth-child(2) {
+          top: 50%;
+        }
+
+        &:nth-child(3) {
+          top: 90%;
+        }
+      }
+    }
+
+    nav {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: -800px;
+      bottom: 0;
+      z-index: 20;
+      width: 300px;
+      padding: 25px;
+      background-color: #fff;
+      color: #333;
+      transition: all 0.5s;
+    }
+
+    .mask {
+      display: none;
+    }
+
+    &.open {
+      nav {
+        left: 0;
+
+        .nav-list {
+          flex-direction: column;
+          list-style: none;
+
+          li {
+            // margin-bottom: 14px;
+
+            a {
+              color: #4a4a4a;
+              font-size: 14px;
+              text-decoration: none;
+            }
+          }
+        }
+      }
+
+      .hamburger {
+        span {
+          background-color: #fff;
+          z-index: 20;
+
+          &:nth-child(1) {
+            top: 50%;
+            transform: rotate(-315deg);
+          }
+
+          &:nth-child(2) {
+            transform: rotate(315deg);
+          }
+
+          &:nth-child(3) {
+            top: 50%;
+            transform: rotate(-315deg);
+          }
+        }
+      }
+
+      .mask {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #b6936a;
+        opacity: 0.8;
+        z-index: 10;
+        cursor: pointer;
+      }
+    }
+  }
+}

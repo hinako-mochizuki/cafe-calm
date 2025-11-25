@@ -1,0 +1,13 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header .site-logo {
+  width: 200px;
+  height: 90px;
+}
+header .site-logo img {
+  max-width: 100%;
+}/*# sourceMappingURL=contact.css.map */
